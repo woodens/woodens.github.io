@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.gowork.top/hello-django/</loc>
+    
+    <lastmod>2017-11-17T10:30:21.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.gowork.top/hello-vue-cli/</loc>
+    
+    <lastmod>2017-11-16T13:44:32.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://www.gowork.top/about/index.html</loc>
     
     <lastmod>2017-11-02T09:16:28.000Z</lastmod>

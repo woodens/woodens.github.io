@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+    <meta charset="utf-8">
+    
+    <title>django初识 | gowork的博客</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="Python下有许多款不同的 Web 框架。Django是重量级选手中最有代表性的一位。许多成功的网站和APP都基于Django。 Django是一个开放源代码的Web应用框架，由Python写成。 Django遵守BSD版权，初次发布于2005年7月, 并于2008年9月发布了第一个正式版本1.0 。 Django采用了MVC的软件设计模式，即模型M，视图V和控制器C。">
+<meta name="keywords" content="django">
+<meta property="og:type" content="article">
+<meta property="og:title" content="django初识">
+<meta property="og:url" content="http://www.gowork.top/hello-django/index.html">
+<meta property="og:site_name" content="gowork的博客">
+<meta property="og:description" content="Python下有许多款不同的 Web 框架。Django是重量级选手中最有代表性的一位。许多成功的网站和APP都基于Django。 Django是一个开放源代码的Web应用框架，由Python写成。 Django遵守BSD版权，初次发布于2005年7月, 并于2008年9月发布了第一个正式版本1.0 。 Django采用了MVC的软件设计模式，即模型M，视图V和控制器C。">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://on90cf3na.bkt.clouddn.com/17-11-16/35240286.jpg">
+<meta property="og:updated_time" content="2017-11-17T10:30:21.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="django初识">
+<meta name="twitter:description" content="Python下有许多款不同的 Web 框架。Django是重量级选手中最有代表性的一位。许多成功的网站和APP都基于Django。 Django是一个开放源代码的Web应用框架，由Python写成。 Django遵守BSD版权，初次发布于2005年7月, 并于2008年9月发布了第一个正式版本1.0 。 Django采用了MVC的软件设计模式，即模型M，视图V和控制器C。">
+<meta name="twitter:image" content="http://on90cf3na.bkt.clouddn.com/17-11-16/35240286.jpg">
+    
+
+    
+
+    
+        <link rel="icon" href="http://on90cf3na.bkt.clouddn.com/17-11-2/58150033.jpg" />
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/open-sans/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/2.1.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+        <script type="text/javascript">
+(function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-109150734-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+    
+    
+    
+        <script>
+var _hmt = _hmt || [];
+(function() {
+    var hm = document.createElement("script");
+    hm.src = "//hm.baidu.com/hm.js?15a94359325cab4f651377e582cbb8f1";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+    
+
+
+</head>
+
+<body>
+    <div id="container">
+        <header id="header">
+    <div id="header-main" class="header-inner">
+        <div class="outer">
+            <a href="/" id="logo">
+                <i class="logo"></i>
+                <span class="site-title">gowork的博客</span>
+            </a>
+            <nav id="main-nav">
+                
+                    <a class="main-nav-link" href="/.">首页</a>
+                
+                    <a class="main-nav-link" href="/archives">归档</a>
+                
+                    <a class="main-nav-link" href="/categories">分类</a>
+                
+                    <a class="main-nav-link" href="/tags">标签</a>
+                
+                    <a class="main-nav-link" href="/about">关于</a>
+                
+            </nav>
+            
+                
+                <nav id="sub-nav">
+                    <div class="profile" id="profile-nav">
+                        <a id="profile-anchor" href="javascript:;">
+                            <img class="avatar" src="http://on90cf3na.bkt.clouddn.com/17-11-2/97360426.jpg" />
+                            <i class="fa fa-caret-down"></i>
+                        </a>
+                    </div>
+                </nav>
+            
+            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="想要查找什么..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+        </div>
+    </div>
+    <div id="main-nav-mobile" class="header-sub header-inner">
+        <table class="menu outer">
+            <tr>
+                
+                    <td><a class="main-nav-link" href="/.">首页</a></td>
+                
+                    <td><a class="main-nav-link" href="/archives">归档</a></td>
+                
+                    <td><a class="main-nav-link" href="/categories">分类</a></td>
+                
+                    <td><a class="main-nav-link" href="/tags">标签</a></td>
+                
+                    <td><a class="main-nav-link" href="/about">关于</a></td>
+                
+                <td>
+                    
+    <div class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
+    </div>
+
+                </td>
+            </tr>
+        </table>
+    </div>
+</header>
+
+        <div class="outer">
+            
+                
+
+<aside id="profile">
+    <div class="inner profile-inner">
+        <div class="base-info profile-block">
+            <img id="avatar" src="http://on90cf3na.bkt.clouddn.com/17-11-2/97360426.jpg" />
+            <h2 id="name">gowork</h2>
+            <h3 id="title">Web Developer &amp; Designer</h3>
+            <span id="location"><i class="fa fa-map-marker"></i>Shanghai, China</span>
+            <a id="follow" target="_blank" href="https://github.com/woodens/">关注我</a>
+        </div>
+        <div class="article-info profile-block">
+            <div class="article-info-block">
+                5
+                <span>文章</span>
+            </div>
+            <div class="article-info-block">
+                6
+                <span>标签</span>
+            </div>
+        </div>
+        
+        <div class="profile-block social-links">
+            <table>
+                <tr>
+                    
+                    
+                    <td>
+                        <a href="http://github.com/woodens" target="_blank" title="github" class=tooltip>
+                            <i class="fa fa-github"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="https://gitee.com/gowork/" target="_blank" title="git" class=tooltip>
+                            <i class="fa fa-git"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="http://weibo.com/u/2099301864" target="_blank" title="weibo" class=tooltip>
+                            <i class="fa fa-weibo"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="mailto:tombskys@gmail.com" target="_blank" title="envelope" class=tooltip>
+                            <i class="fa fa-envelope"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="/" target="_blank" title="rss" class=tooltip>
+                            <i class="fa fa-rss"></i>
+                        </a>
+                    </td>
+                    
+                </tr>
+            </table>
+        </div>
+        
+    </div>
+</aside>
+
+            
+            <section id="main"><article id="post-hello-django" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+            django初识
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/hello-django/">
+            <time datetime="2017-11-16T13:23:20.000Z" itemprop="datePublished">2017-11-16</time>
+        </a>
+    </div>
+
+
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/framework/">框架</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/django/">django</a>
+    </div>
+
+                        
+                        <span id="busuanzi_container_page_pv">
+                            <i class="fa fa-eye" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;<span id="busuanzi_value_page_pv"></span>
+                        </span>
+                        
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <p>Python下有许多款不同的 Web 框架。Django是重量级选手中最有代表性的一位。许多成功的网站和APP都基于Django。</p>
+<p>Django是一个开放源代码的Web应用框架，由Python写成。</p>
+<p>Django遵守BSD版权，初次发布于2005年7月, 并于2008年9月发布了第一个正式版本1.0 。</p>
+<p>Django采用了MVC的软件设计模式，即模型M，视图V和控制器C。</p>
+<a id="more"></a>
+<h1 id="django"><a href="#django" class="headerlink" title="django"></a>django</h1><h2 id="django的目录结构"><a href="#django的目录结构" class="headerlink" title="django的目录结构"></a>django的目录结构</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">projectName</div><div class="line">	projectName</div><div class="line">		__init__.py</div><div class="line">		settings.py</div><div class="line">		urls.py</div><div class="line">	apps</div><div class="line">		app1</div><div class="line">		app2</div><div class="line">	log</div><div class="line">	media</div><div class="line">	static</div><div class="line">	templates</div><div class="line">	manage.py</div></pre></td></tr></table></figure>
+<h2 id="常见命令"><a href="#常见命令" class="headerlink" title="常见命令"></a>常见命令</h2><ol>
+<li><p>新建 project</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">django-admin.py startproject project_name</div></pre></td></tr></table></figure>
+</li>
+<li><p>新建 app</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">python manage.py startapp app_name</div><div class="line">或 django-admin.py startapp app_name</div></pre></td></tr></table></figure>
+<p> 将多个app放在同一个apps文件夹中，这样会比较清楚规范</p>
+<ul>
+<li>项目右键new–&gt;python package-&gt;apps</li>
+<li>apps的文件夹右击–&gt;选择mark directory as—&gt;选择sources root-&gt;点击run</li>
+<li>在setting.py中添加设置 <code>sys.path.insert(0,os.path.join(BASE_DIR,&#39;apps&#39;))</code></li>
+</ul>
+</li>
+<li><p>创建数据库表</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"># 1. 创建更改的文件</div><div class="line">python manage.py makemigrations</div><div class="line"># 2. 将生成的py文件应用到数据库</div><div class="line">python manage.py migrate</div></pre></td></tr></table></figure>
+</li>
+<li><p>创建超级管理员</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">python manage.py createsuperuser</div><div class="line"># 用户名和密码必填</div><div class="line"># 修改 用户密码可以用：</div><div class="line">python manage.py changepassword username</div></pre></td></tr></table></figure>
+</li>
+<li><p>导出数据 导入数据</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">python manage.py dumpdata appname &gt; appname.json</div><div class="line">python manage.py loaddata appname.json</div></pre></td></tr></table></figure>
+</li>
+<li><p>Django 项目环境终端</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">python manage.py shell</div></pre></td></tr></table></figure>
+<p> 与直接使用python进入shelld的区别是你可以在这个 shell 里面调用当前项目的 models.py 中的 API</p>
+</li>
+<li><p>数据库命令行</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">python manage.py dbshell</div></pre></td></tr></table></figure>
+</li>
+<li><p>更多命令</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">终端输入 python manage.py 可以看到详细的列表</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="django-语言支持"><a href="#django-语言支持" class="headerlink" title="django 语言支持"></a>django 语言支持</h2><p>1.7之前，需要设置<code>LANGUAGE_CODE = &#39;zh_CN&#39;</code><br>在1.7以上，django的中文需要设置<code>LANGUAGE_CODE = &#39;zh_Hans&#39;</code></p>
+<h2 id="django-模块"><a href="#django-模块" class="headerlink" title="django 模块"></a>django 模块</h2><ul>
+<li><code>xadmin</code> 后台管理系统的界面需要添加<code>django_crispy_forms</code>不然会报错</li>
+<li>‘django_captcha’,          # 验证码</li>
+<li>‘django_pure_pagination’,  # 分页</li>
+</ul>
+<h2 id="django-ORM"><a href="#django-ORM" class="headerlink" title="django ORM"></a>django ORM</h2><ol>
+<li><p>获取models中choices的显示，可以在页面中这样取值<code>object.get_fieldname_display</code>来获取 </p>
+<p>举个🌰：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Course</span><span class="params">(models.Model)</span>:</span></div><div class="line">  	degree = models.CharField(max_length=<span class="number">10</span>, choices=((<span class="string">'junior'</span>, <span class="string">'初级'</span>), (<span class="string">'middle'</span>, <span class="string">'中级'</span>), 	(<span class="string">'senior'</span>, <span class="string">'高级'</span>)), verbose_name=<span class="string">'课程等级'</span>)</div></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&#123;&#123;course.get_degree_display&#125;&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>反向获取参考外键的数据，可以使用<code>_set.all()</code>来获取</p>
+<p>举个🌰：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Course</span><span class="params">(models.Model)</span>:</span></div><div class="line">    <span class="string">"""课程</span></div><div class="line"><span class="string">    """</span></div><div class="line">	...</div><div class="line">	<span class="function"><span class="keyword">def</span> <span class="title">get_zj_nums</span><span class="params">(self)</span>:</span></div><div class="line">		<span class="keyword">return</span> self.lesson_set.all().count()</div><div class="line"></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Lesson</span><span class="params">(models.Model)</span>:</span></div><div class="line">	<span class="string">"""课程章节</span></div><div class="line"><span class="string">	""“</span></div><div class="line"><span class="string">	course = models.ForeignKey(Course, verbose_name='课程')</span></div><div class="line"><span class="string">	...</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>判断用户是否登录</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">request.user.is_authenticated()</div></pre></td></tr></table></figure>
+</li>
+<li><p>页面url，</p>
+ <figure class="highlight plain"><figcaption><span>url 'course:list' course.id%&#125; ```</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">5. django 的form表单验证</div><div class="line">6. ajax请求</div><div class="line"></div><div class="line">  在js中写下如下内容，django默认有csrf验证，所以下面代码需要添加在html中</div><div class="line"></div><div class="line">  ```javascript</div><div class="line">  	$.ajax(&#123;</div><div class="line">  		cache:false,</div><div class="line">  		type:&apos;POST&apos;,</div><div class="line">  		url:&apos;&apos;,</div><div class="line">  		data:&#123;&#125;,</div><div class="line">  		async:true,</div><div class="line">  		beforeSend:function(xhr,settings)&#123;</div><div class="line">  			xhr.setRequestHeader(’X-CSRFToken‘,&apos;&#123;&#123;csrf_token&#125;&#125;&apos;);</div><div class="line">  		&#125;,</div><div class="line">  		success:function(data)&#123;</div><div class="line">  		</div><div class="line">  		&#125;</div><div class="line">  	&#125;)</div></pre></td></tr></table></figure>
+<p>python后台中</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">from django.http import HttpResponse</div><div class="line">return HttpResponse(&apos;jsonStr&apos;,content_type=&apos;application/json&apos;)</div></pre></td></tr></table></figure>
+</li>
+<li><p>上传文件的地址media</p>
+<p>在settings.py中设置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">ME DIA_URL = &apos;/media/&apos;</div><div class="line"></div><div class="line">MEDIA_ROOT = os.path.join(BASE_DIR,&apos;media&apos;)</div></pre></td></tr></table></figure>
+<p>然后在html中引用</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;img src=&quot;&#123;&#123;MEDIA_URL&#125;&#125;&#123;&#123;course.img&#125;&#125;&quot;&gt;</div></pre></td></tr></table></figure>
+</li>
+<li><p>过滤包含外键id的值</p>
+<p>可以用_来连接外键的字段，__来连接使用ORM方法</p>
+<p>举个🌰：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">user_ids = [user_course.user.id for user_course in user_courses]</div><div class="line">all_user_courses = UserCourse.object.filter(user_id__in=user_ids)</div></pre></td></tr></table></figure>
+</li>
+<li><p>数据迁移</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">makemigrations   将数据模型变更制作一个迁移</div><div class="line">migrate          执行迁移</div><div class="line">sqlmigrate       展示迁移的SQL语句</div></pre></td></tr></table></figure>
+</li>
+<li><p>数据模型</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">class OfficialUrl(models.Model):</div><div class="line">    createTime = models.DateTimeField(auto_now_add=True)</div><div class="line">    url = models.CharField(max_length=500, null=True, blank=True)</div><div class="line">	</div><div class="line">	class Meta:</div><div class="line">		verbose_name = &apos;官方地址&apos;</div><div class="line">		verbose_name_ plural = verbose_name</div><div class="line">		db_table = &apos;official_url&apos;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>verbose_name_plural是后台设置时显示的复数</p>
+</blockquote>
+</li>
+<li><p>查询</p>
+<ul>
+<li>User.objects.all()</li>
+<li>User.objects.filter(name=’’, age=’’)</li>
+<li><p>取出一条</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">if all_message:</div><div class="line">	message = all_messages[0]</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>保存</p>
+<ul>
+<li><p>save()</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">user = User()</div><div class="line">user.name = &apos;张三&apos;</div><div class="line">user.save()</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>删除</p>
+<ul>
+<li>delete()</li>
+</ul>
+</li>
+</ol>
+<h2 id="django-view"><a href="#django-view" class="headerlink" title="django view"></a>django view</h2><ol>
+<li><p>处理请求的两种方式</p>
+<ul>
+<li><p>函数处理请求</p>
+<p>在urls.py中写入</p>
+<p>在views.py中写入</p>
+</li>
+<li><p>class处理请求</p>
+<p>在urls.py中写入</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"># _*_ coding: UTF-8 _*_</div><div class="line">from django.conf.urls import url</div><div class="line"></div><div class="line">import views</div><div class="line"></div><div class="line">urlpatterns = [</div><div class="line">    url(r&apos;^list$&apos;, views.CourseListView.as_view(), name=&apos;course_list&apos;)</div><div class="line">]</div></pre></td></tr></table></figure>
+<p>在views.py中写入</p>
+</li>
+</ul>
+</li>
+<li><p>登录权限验证的view</p>
+<p>不用class的情况下，方法加上装饰器<code>@login_required</code>即可，但是在使用class创建view的情况下，需要使用到继承来处理这种情况，先创建登录权限类</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># _*_ coding: UTF-8 _*_</span></div><div class="line"></div><div class="line"><span class="keyword">from</span> django.contrib.auth.decorators <span class="keyword">import</span> login_required</div><div class="line"><span class="keyword">from</span> django.utils.decorators <span class="keyword">import</span> method_decorator</div><div class="line"></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">LoginRequiredMixin</span><span class="params">(object)</span>:</span></div><div class="line"><span class="meta">    @method_decorator(login_required(login_url='/login/'))</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">dispatch</span><span class="params">(self, request, *args, **kwargs)</span>:</span></div><div class="line">        <span class="keyword">return</span> super(LoginRequiredMixin, self).dispatch(request, *args, **kwargs)</div></pre></td></tr></table></figure>
+<p>然后在view中继承</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">class CourseAddView(LoginRequiredMixin, View):</div><div class="line">	...</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="django虚拟环境virtualenv与virtualenvwrapper"><a href="#django虚拟环境virtualenv与virtualenvwrapper" class="headerlink" title="django虚拟环境virtualenv与virtualenvwrapper"></a>django虚拟环境<code>virtualenv</code>与<code>virtualenvwrapper</code></h2><ol>
+<li>虚拟virtualenv  与virtualenvwrapper</li>
+<li><p>创建虚拟环境</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mkvirtualenv 虚拟环境目录</div></pre></td></tr></table></figure>
+<blockquote>
+<p>创建完成后自动进入虚拟环境 </p>
+</blockquote>
+</li>
+<li><p>退出虚拟环境</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">deactivate</div></pre></td></tr></table></figure>
+</li>
+<li><p>查看已经建立的虚拟环境</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">workon</div></pre></td></tr></table></figure>
+</li>
+<li><p>进入某个虚拟环境</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">workon 虚拟环境目录</div></pre></td></tr></table></figure>
+</li>
+<li><p>虚拟环境添加包</p>
+<blockquote>
+<p>进入虚拟环境后使用pip进行操作，操作方法参照pip命令</p>
+</blockquote>
+<p>​</p>
+<h2 id="使用pyenv及pyenv-virtualenvwrapper"><a href="#使用pyenv及pyenv-virtualenvwrapper" class="headerlink" title="使用pyenv及pyenv-virtualenvwrapper"></a>使用pyenv及pyenv-virtualenvwrapper</h2></li>
+<li><p>安装<code>pyenv</code>及<code>pyenv-virtualenvwrapper</code></p>
+<p>命令行执行</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">brew install pyenv 、brew install pyenv-virtualenv</div></pre></td></tr></table></figure>
+<p>安装完在<code>~</code>目录下的<code>.bash_profile</code>文件加上以下内容</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">export PYENV_ROOT=/usr/local/var/pyenv</div><div class="line">if which pyenv &gt; /dev/null; then eval &quot;$(pyenv init -)&quot;; fi</div><div class="line">if which pyenv-virtualenv-init &gt; /dev/null; then eval &quot;$(pyenv virtualenv-init -)&quot;; fi</div></pre></td></tr></table></figure>
+<blockquote>
+<p>说明：PYENV_ROOT为pyenv的环境目录 可自行创建目录</p>
+</blockquote>
+</li>
+</ol>
+<ul>
+<li><p><code>pyenv</code>的使用</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">pyenv versions：查看当前pyenv下的所有python版本.</div><div class="line">pyenv install --list：列出所有可以下载的python版本.</div><div class="line">pyenv install 版本号：下载并安装python版本，eg：python install 2.7.12，版本号可根据上一条命令获取.</div><div class="line">python global 版本号：切换当前默认的python版本，全局有效.</div><div class="line">python local 版本号：切换当前默认的python版本，当前用户有效.</div></pre></td></tr></table></figure>
+</li>
+<li><p><code>pyenv-virtualenv</code>的使用</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">pyenv virtualenv 2.7.12 python2_7_12：创建名为python2_7_12的虚拟环境，对应的版本为2.7.12</div><div class="line">pyenv activate python2_7_12：切换到python2_7_12虚拟环境</div><div class="line">pyenv deactivate：退回系统环境</div><div class="line">pyenv virtualenvs 显示所有虚拟环境</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="django-静态文件处理"><a href="#django-静态文件处理" class="headerlink" title="django 静态文件处理"></a>django 静态文件处理</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">STATIC_URL = &apos;/static/&apos;                 # 访问静态url</div><div class="line">STATICFILES_DIRS = (                    # 静态文件夹</div><div class="line">    os.path.join(BASE_DIR, &apos;static&apos;),</div><div class="line">)</div></pre></td></tr></table></figure>
+<h2 id="django-xadmin"><a href="#django-xadmin" class="headerlink" title="django xadmin"></a>django xadmin</h2><ol>
+<li><p>后台管理显示app中文</p>
+<p> 在每个app的apps.py的class后加入 <code>verbose_name=&#39;中文app名&#39;</code><br> 在<code>__init__.py</code>文件中加入<code>default_app_config = &#39;&lt;app packagename&gt;.apps.&lt;app&gt;Config&#39;</code></p>
+</li>
+</ol>
+<h3 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h3><ul>
+<li><p>使用from django.views.generic import View创建post方法时怎么略过csrf_token验证</p>
+<blockquote>
+<p>解决办法： 在class上加注解@method_decorator(csrf_exempt, name=’dispatch’)</p>
+</blockquote>
+</li>
+<li><p>怎么获取页面上POST上来的数组</p>
+<blockquote>
+<p>request.POST.getlist(‘ids[]’, []),不要忘记[]</p>
+</blockquote>
+</li>
+</ul>
+
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+    <div class="jiathis_style">
+    <span class="jiathis_txt">分享到：</span>
+    <a class="jiathis_button_qzone">QQ空间</a>
+    <a class="jiathis_button_tsina">新浪微博</a>
+    <a class="jiathis_button_tqq">腾讯微博</a>
+    <a class="jiathis_button_weixin">微信</a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+    <a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<style>
+    .jiathis_style div:first-child:not(.jiadiv_01) {
+        width: auto !important;
+        border: none !important;
+    }
+    .jiathis_style .jiadiv_01 {
+        margin: 10px 0;
+        border-radius: 4px;
+        border: #e1e1e1 solid 1px;
+    }
+    .jiathis_style .jiadiv_01 div:first-child {
+        display: none;
+    }
+    .jiathis_style .jiadiv_02 {
+        padding: 7px 0 !important;
+    }
+    .jiathis_style .jiadiv_02 .jiatitle {
+        width: 85px;
+        border: none;
+        height: auto;
+        margin: 3px 10px;
+        padding: 6px 10px;
+        border-radius: 4px;
+    }
+    .jiathis_style .jiadiv_02 .jiatitle:hover {
+        border: none;
+    }
+    .jiathis_style .jiadiv_02 .jiatitle:nth-child(even) {
+        margin-left: 0;
+    }
+    .jiathis_style .jtico:hover {
+        opacity: 1;
+    }
+    .jiathis_style .ckepopBottom,
+    .jiathis_style .centerBottom {
+        width: auto !important;
+        padding: 5px;
+        background: #f7f7f7;
+    }
+</style>
+
+
+
+</div>
+
+            
+    
+        <a href="http://www.gowork.top/hello-django/#comments" class="article-comment-link">评论</a>
+    
+
+        </footer>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/hello-vue-cli/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">下一篇</strong>
+            <div class="article-nav-title">hello-vue-cli</div>
+        </a>
+    
+</nav>
+
+
+    
+</article>
+
+
+    
+    
+        <section id="comments">
+    <div id="uyan_frame"></div>
+</section>
+    
+
+</section>
+            
+                
+<aside id="sidebar">
+   
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">最新文章</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/hello-django/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://on90cf3na.bkt.clouddn.com/17-11-16/35240286.jpg)" alt="django初识" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/framework/">框架</a></p>
+                            <p class="item-title"><a href="/hello-django/" class="title">django初识</a></p>
+                            <p class="item-date"><time datetime="2017-11-16T13:23:20.000Z" itemprop="datePublished">2017-11-16</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/hello-vue-cli/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://on90cf3na.bkt.clouddn.com/17-11-16/35240286.jpg)" alt="hello-vue-cli" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/tools/">工具</a></p>
+                            <p class="item-title"><a href="/hello-vue-cli/" class="title">hello-vue-cli</a></p>
+                            <p class="item-date"><time datetime="2017-11-15T13:23:20.000Z" itemprop="datePublished">2017-11-15</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/hello-shadowsocks/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://on90cf3na.bkt.clouddn.com/17-11-1/50631506.jpg)" alt="在阿里云上安装配置shadowsocks" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/tools/">工具</a></p>
+                            <p class="item-title"><a href="/hello-shadowsocks/" class="title">在阿里云上安装配置shadowsocks</a></p>
+                            <p class="item-date"><time datetime="2017-10-31T13:44:26.000Z" itemprop="datePublished">2017-10-31</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/hello-hexo/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://on90cf3na.bkt.clouddn.com/17-11-2/77860457.jpg)" alt="使用hexo框架创建个人博客" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/tools/">工具</a></p>
+                            <p class="item-title"><a href="/hello-hexo/" class="title">使用hexo框架创建个人博客</a></p>
+                            <p class="item-date"><time datetime="2017-10-31T07:45:11.000Z" itemprop="datePublished">2017-10-31</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/hello-git-repository/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://on90cf3na.bkt.clouddn.com/17-11-2/1115130.jpg)" alt="centos上创建git服务器" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/tools/">工具</a></p>
+                            <p class="item-title"><a href="/hello-git-repository/" class="title">centos上创建git服务器</a></p>
+                            <p class="item-date"><time datetime="2017-10-21T07:47:26.000Z" itemprop="datePublished">2017-10-21</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">分类</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/tools/">工具</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/framework/">框架</a><span class="category-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">归档</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">十一月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">十月 2017</a><span class="archive-list-count">3</span></li></ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">标签</h3>
+        <div class="widget">
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/django/">django</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/shadowsocks/">shadowsocks</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue-cli/">vue-cli</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/blog/">博客</a><span class="tag-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">标签云</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/django/" style="font-size: 10px;">django</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/shadowsocks/" style="font-size: 10px;">shadowsocks</a> <a href="/tags/vue-cli/" style="font-size: 10px;">vue-cli</a> <a href="/tags/blog/" style="font-size: 10px;">博客</a>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">链接</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://hexo.io">Hexo</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+    
+    <div id="toTop" class="fa fa-angle-up"></div>
+</aside>
+
+            
+        </div>
+        <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            &copy; 2017 gowork<br>
+
+            <span id="busuanzi_container_site_pv">
+                <i class="fa fa-user" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;<span id="busuanzi_value_site_uv"></span>
+            </span>
+            <span id="busuanzi_container_site_pv">
+                <i class="fa fa-eye" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;<span id="busuanzi_value_site_pv"></span>
+            </span>
+            <br>
+
+            由 <a href="http://hexo.io/" target="_blank">Hexo</a>强力驱动. 主题 - <a href="https://github.com/ppoffice/hexo-theme-icarus">icarus</a>
+        </div>
+    </div>
+    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <script>
+        (function(){
+            var bp = document.createElement('script');
+            var curProtocol = window.location.protocol.split(':')[0];
+            if (curProtocol === 'https') {
+                bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+            }
+            else {
+                bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+            }
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(bp, s);
+        })();
+    </script>
+</footer>
+        
+    
+    <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2147831"></script>
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>

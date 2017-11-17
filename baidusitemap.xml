@@ -3,6 +3,46 @@
 
 
     
+  <url>
+    <loc>http://www.gowork.top/hello-django/</loc>
+    <lastmod>2017-11-17T10:30:21.000Z</lastmod>
+    <data>
+        <display>
+        <title>django初识</title>
+        <pubTime>2017-11-16T13:23:20.000Z</pubTime>
+        
+        <tag>django</tag>
+         
+         
+           
+             
+              <breadCrumb title="框架" url="http://www.gowork.top/categories/framework/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.gowork.top/hello-vue-cli/</loc>
+    <lastmod>2017-11-16T13:44:32.000Z</lastmod>
+    <data>
+        <display>
+        <title>hello-vue-cli</title>
+        <pubTime>2017-11-15T13:23:20.000Z</pubTime>
+        
+        <tag>vue-cli</tag>
+         
+         
+           
+             
+              <breadCrumb title="工具" url="http://www.gowork.top/categories/tools/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
     
   <url>
     <loc>http://www.gowork.top/hello-git-repository/</loc>

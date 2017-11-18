@@ -207,6 +207,12 @@ code {
     width: 100%;
   }
 }
+#busuanzi_value_site_pv,
+#busuanzi_value_site_uv,
+#busuanzi_value_page_pv {
+  color: #38b7ea;
+  font: 16px;
+}
 .archive-article-header a,
 .layout-wrap-inner.tag-cloud a,
 .timeline-row .content h1 a,

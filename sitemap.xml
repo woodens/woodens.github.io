@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.gowork.top/python-datetime/</loc>
+    
+    <lastmod>2017-11-20T10:59:33.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://www.gowork.top/hello-vue-cli/</loc>
     
     <lastmod>2017-11-18T16:25:50.000Z</lastmod>

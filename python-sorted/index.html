@@ -3,18 +3,22 @@
 <head>
     <meta charset="utf-8">
     
-    <title>分类: 工具 | gowork的博客</title>
+    <title>python排序 | gowork的博客</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="gowork在技术学习及使用过程中的一些积累">
-<meta property="og:type" content="website">
-<meta property="og:title" content="gowork的博客">
-<meta property="og:url" content="http://www.gowork.top/categories/tools/index.html">
+    <meta name="description" content="最近在做一个算法时候用到很多python的排序，之前没有注意过，更想象中的不太一样。">
+<meta name="keywords" content="python,排序">
+<meta property="og:type" content="article">
+<meta property="og:title" content="python排序">
+<meta property="og:url" content="http://www.gowork.top/python-sorted/index.html">
 <meta property="og:site_name" content="gowork的博客">
-<meta property="og:description" content="gowork在技术学习及使用过程中的一些积累">
+<meta property="og:description" content="最近在做一个算法时候用到很多python的排序，之前没有注意过，更想象中的不太一样。">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://on90cf3na.bkt.clouddn.com/17-11-21/6039090.jpg">
+<meta property="og:updated_time" content="2017-11-21T10:00:01.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="gowork的博客">
-<meta name="twitter:description" content="gowork在技术学习及使用过程中的一些积累">
+<meta name="twitter:title" content="python排序">
+<meta name="twitter:description" content="最近在做一个算法时候用到很多python的排序，之前没有注意过，更想象中的不太一样。">
+<meta name="twitter:image" content="http://on90cf3na.bkt.clouddn.com/17-11-21/6039090.jpg">
     
 
     
@@ -231,158 +235,155 @@ var _hmt = _hmt || [];
 </aside>
 
             
-            <section id="main">
-<div class="timeline timeline-wrap">
-    <div class="timeline-row timeline-row-major">
-        <span class="node"><i class="fa fa-folder"></i></span>
-        <h1 class="title">工具</h1>
-    </div>
-    
-        <div class="timeline-row">
-            <span class="node"></span>
-            <div class="content">
+            <section id="main"><article id="post-python-sorted" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
                 
     
-        <h1 itemprop="name">
-            <a class="timeline-article-title" href="/hello-vue-cli/">hello-vue-cli</a>
+        <h1 class="article-title" itemprop="name">
+            python排序
         </h1>
     
 
-                <div class="article-meta">
-                    
+                
+                    <div class="article-meta">
+                        
     <div class="article-date">
         <i class="fa fa-calendar"></i>
-        <a href="/hello-vue-cli/">
-            <time datetime="2017-11-15T13:23:20.000Z" itemprop="datePublished">2017-11-15</time>
+        <a href="/python-sorted/">
+            <time datetime="2017-11-21T08:11:55.000Z" itemprop="datePublished">2017-11-21</time>
         </a>
     </div>
 
 
-                    
+                        
     <div class="article-category">
     	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/tools/">工具</a>
+        <a class="article-category-link" href="/categories/python/">python</a>
     </div>
 
-                    
+                        
     <div class="article-tag">
         <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/vue-cli/">vue-cli</a>
+        <a class="tag-link" href="/tags/python/">python</a>, <a class="tag-link" href="/tags/排序/">排序</a>
     </div>
 
-                </div>
-            </div>
-        </div>
-    
-        <div class="timeline-row">
-            <span class="node"></span>
-            <div class="content">
+                        
+                        <span id="busuanzi_container_page_pv">
+                            <i class="fa fa-eye" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;<span id="busuanzi_value_page_pv"></span>
+                        </span>
+                        
+                    </div>
                 
-    
-        <h1 itemprop="name">
-            <a class="timeline-article-title" href="/hello-shadowsocks/">在阿里云上安装配置shadowsocks</a>
-        </h1>
-    
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <p>最近在做一个算法时候用到很多python的排序，之前没有注意过，更想象中的不太一样。</p>
+<a id="more"></a>
+<p>常见的排序有<code>sort</code>、<code>sorted</code>两种，以下是在python2.7环境下运行的</p>
+<p>sort</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>a = [<span class="number">1</span>, <span class="number">4</span>, <span class="number">3</span>, <span class="number">2</span>] </div><div class="line"><span class="comment"># 从小到大排序</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>a.sort()</div><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">print</span> a</div><div class="line">[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>]</div><div class="line"><span class="comment"># 从大到小排序</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>a.sort(reverse=<span class="keyword">True</span>)</div><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">print</span> a</div><div class="line">[<span class="number">4</span>, <span class="number">3</span>, <span class="number">2</span>, <span class="number">1</span>]</div></pre></td></tr></table></figure>
+<p>sorted</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>a = [<span class="number">1</span>, <span class="number">4</span>, <span class="number">3</span>, <span class="number">2</span>]</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>b = [<span class="string">'aa'</span>, <span class="string">'BB'</span>, <span class="string">'cc'</span>, <span class="string">'zz'</span>, <span class="string">'DD'</span>]</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>c = [<span class="string">'aaa'</span>, <span class="string">'bb'</span>, <span class="string">'C'</span>, <span class="string">'dddd'</span>]</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>d = [&#123;<span class="string">'name'</span>:<span class="string">'张三'</span>,<span class="string">'age'</span>:<span class="number">20</span>&#125;, &#123;<span class="string">'name'</span>:<span class="string">'王五'</span>,<span class="string">'age'</span>:<span class="number">10</span>&#125;,&#123;<span class="string">'name'</span>:<span class="string">'李四'</span>,<span class="string">'age'</span>:<span class="number">15</span>&#125;]</div><div class="line"></div><div class="line"><span class="comment"># 从小到大排序</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">print</span> sorted(a)</div><div class="line">[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>]</div><div class="line"></div><div class="line"><span class="comment"># 从大到小排序</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">print</span> sorted(a, reverse=<span class="keyword">True</span>)</div><div class="line">[<span class="number">4</span>, <span class="number">3</span>, <span class="number">2</span>, <span class="number">1</span>]</div><div class="line"></div><div class="line"><span class="comment"># 按ascii码从小到大排序</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">print</span> sorted(b)</div><div class="line">[<span class="string">'BB'</span>, <span class="string">'DD'</span>, <span class="string">'aa'</span>, <span class="string">'cc'</span>, <span class="string">'zz'</span>]</div><div class="line"></div><div class="line"><span class="comment"># 按ascii码从大到小排序</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">print</span> sorted(b, reverse=<span class="keyword">True</span>)</div><div class="line">[<span class="string">'zz'</span>, <span class="string">'cc'</span>, <span class="string">'aa'</span>, <span class="string">'DD'</span>, <span class="string">'BB'</span>]</div><div class="line"></div><div class="line"><span class="comment"># 按列表的元素的长度排序 </span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">print</span> sorted(c, key=len)</div><div class="line">[<span class="string">'C'</span>, <span class="string">'bb'</span>, <span class="string">'aaa'</span>, <span class="string">'dddd'</span>]</div><div class="line"></div><div class="line"><span class="comment"># 按小写字母的ascii码从小到大</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">print</span> sorted(c, key=str.lower)</div><div class="line">[<span class="string">'aaa'</span>, <span class="string">'bb'</span>, <span class="string">'C'</span>, <span class="string">'dddd'</span>]</div><div class="line"></div><div class="line"><span class="comment"># 自定义函数进行排序，最后一个字母ascii从小到大</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="function"><span class="keyword">def</span> <span class="title">last_char</span><span class="params">(s)</span>:</span></div><div class="line"><span class="meta">... </span>   	<span class="keyword">return</span> s[<span class="number">-1</span>]</div><div class="line"><span class="keyword">print</span> sorted(c, key = last_char)</div><div class="line">[<span class="string">'C'</span>, <span class="string">'aaa'</span>, <span class="string">'bb'</span>, <span class="string">'dddd'</span>]</div><div class="line"></div><div class="line"><span class="comment"># 匿名函数排序</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">print</span> sorted(c, key = <span class="keyword">lambda</span> x:x[<span class="number">-1</span>])</div><div class="line">[<span class="string">'C'</span>, <span class="string">'aaa'</span>, <span class="string">'bb'</span>, <span class="string">'dddd'</span>]</div><div class="line"></div><div class="line"><span class="comment"># 字典列表进行排序</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="function"><span class="keyword">def</span> <span class="title">age</span><span class="params">(s)</span>:</span></div><div class="line"><span class="meta">... </span>    <span class="keyword">return</span> s[<span class="string">'age'</span>]</div><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">print</span> sorted(d, key = age)</div><div class="line">[&#123;<span class="string">'age'</span>: <span class="number">10</span>, <span class="string">'name'</span>: <span class="string">'\xe7\x8e\x8b\xe4\xba\x94'</span>&#125;, &#123;<span class="string">'age'</span>: <span class="number">15</span>, <span class="string">'name'</span>: <span class="string">'\xe6\x9d\x8e\xe5\x9b\x9b'</span>&#125;, &#123;<span class="string">'age'</span>: <span class="number">20</span>, <span class="string">'name'</span>: <span class="string">'\xe5\xbc\xa0\xe4\xb8\x89'</span>&#125;]</div><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">print</span> sorted(d, key = <span class="keyword">lambda</span> x:x[<span class="string">'age'</span>])</div><div class="line">[&#123;<span class="string">'age'</span>: <span class="number">10</span>, <span class="string">'name'</span>: <span class="string">'\xe7\x8e\x8b\xe4\xba\x94'</span>&#125;, &#123;<span class="string">'age'</span>: <span class="number">15</span>, <span class="string">'name'</span>: <span class="string">'\xe6\x9d\x8e\xe5\x9b\x9b'</span>&#125;, &#123;<span class="string">'age'</span>: <span class="number">20</span>, <span class="string">'name'</span>: <span class="string">'\xe5\xbc\xa0\xe4\xb8\x89'</span>&#125;]</div><div class="line"></div><div class="line"><span class="comment"># 对象列表排序，可以对多个属性进行排序</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="class"><span class="keyword">class</span> <span class="title">Person</span><span class="params">(object)</span>:</span></div><div class="line"><span class="meta">... </span>  <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, name, age)</span>:</span></div><div class="line"><span class="meta">... </span>    self.name=name</div><div class="line"><span class="meta">... </span>    self.age = age</div><div class="line"><span class="meta">... </span>  <span class="function"><span class="keyword">def</span> <span class="title">__repr__</span><span class="params">(self)</span>:</span></div><div class="line"><span class="meta">... </span>    <span class="keyword">return</span> repr((self.name,self.age))</div><div class="line">...</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>f = [Person(<span class="string">'张三'</span>,<span class="number">20</span>),Person(<span class="string">'王五'</span>,<span class="number">10</span>), Person(<span class="string">'李四'</span>,<span class="number">15</span>)]</div><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">print</span> sorted(f, key=operator.attrgetter(<span class="string">'age'</span>, <span class="string">'name'</span>))</div><div class="line">[(<span class="string">'\xe7\x8e\x8b\xe4\xba\x94'</span>, <span class="number">10</span>), (<span class="string">'\xe6\x9d\x8e\xe5\x9b\x9b'</span>, <span class="number">15</span>), (<span class="string">'\xe5\xbc\xa0\xe4\xb8\x89'</span>, <span class="number">20</span>)]</div></pre></td></tr></table></figure>
+<blockquote>
+<p>注：sort会改变数据的原始结构，而sorted不会改变；对于字典列表的多key排序暂时没有解决办法，只能只能用转换为对象的集合，然后进行排序，如果你有好的解决办法望告知！</p>
+</blockquote>
 
-                <div class="article-meta">
-                    
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/hello-shadowsocks/">
-            <time datetime="2017-10-31T13:44:26.000Z" itemprop="datePublished">2017-10-31</time>
-        </a>
-    </div>
-
-
-                    
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/tools/">工具</a>
-    </div>
-
-                    
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/shadowsocks/">shadowsocks</a>
-    </div>
-
-                </div>
-            </div>
+        
         </div>
-    
-        <div class="timeline-row">
-            <span class="node"></span>
-            <div class="content">
-                
-    
-        <h1 itemprop="name">
-            <a class="timeline-article-title" href="/hello-hexo/">使用hexo框架创建个人博客</a>
-        </h1>
-    
+        <footer class="article-footer">
+            <div class="share-container">
 
-                <div class="article-meta">
-                    
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/hello-hexo/">
-            <time datetime="2017-10-31T07:45:11.000Z" itemprop="datePublished">2017-10-31</time>
-        </a>
-    </div>
-
-
-                    
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/tools/">工具</a>
-    </div>
-
-                    
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/hexo/">hexo</a>, <a class="tag-link" href="/tags/blog/">博客</a>
-    </div>
-
-                </div>
-            </div>
-        </div>
-    
-        <div class="timeline-row">
-            <span class="node"></span>
-            <div class="content">
-                
-    
-        <h1 itemprop="name">
-            <a class="timeline-article-title" href="/hello-git-repository/">centos上创建git服务器</a>
-        </h1>
-    
-
-                <div class="article-meta">
-                    
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/hello-git-repository/">
-            <time datetime="2017-10-21T07:47:26.000Z" itemprop="datePublished">2017-10-21</time>
-        </a>
-    </div>
-
-
-                    
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/tools/">工具</a>
-    </div>
-
-                    
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/git/">git</a>
-    </div>
-
-                </div>
-            </div>
-        </div>
-    
+    <div class="jiathis_style">
+    <span class="jiathis_txt">分享到：</span>
+    <a class="jiathis_button_qzone">QQ空间</a>
+    <a class="jiathis_button_tsina">新浪微博</a>
+    <a class="jiathis_button_tqq">腾讯微博</a>
+    <a class="jiathis_button_weixin">微信</a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+    <a class="jiathis_counter_style"></a>
 </div>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<style>
+    .jiathis_style div:first-child:not(.jiadiv_01) {
+        width: auto !important;
+        border: none !important;
+    }
+    .jiathis_style .jiadiv_01 {
+        margin: 10px 0;
+        border-radius: 4px;
+        border: #e1e1e1 solid 1px;
+    }
+    .jiathis_style .jiadiv_01 div:first-child {
+        display: none;
+    }
+    .jiathis_style .jiadiv_02 {
+        padding: 7px 0 !important;
+    }
+    .jiathis_style .jiadiv_02 .jiatitle {
+        width: 85px;
+        border: none;
+        height: auto;
+        margin: 3px 10px;
+        padding: 6px 10px;
+        border-radius: 4px;
+    }
+    .jiathis_style .jiadiv_02 .jiatitle:hover {
+        border: none;
+    }
+    .jiathis_style .jiadiv_02 .jiatitle:nth-child(even) {
+        margin-left: 0;
+    }
+    .jiathis_style .jtico:hover {
+        opacity: 1;
+    }
+    .jiathis_style .ckepopBottom,
+    .jiathis_style .centerBottom {
+        width: auto !important;
+        padding: 5px;
+        background: #f7f7f7;
+    }
+</style>
+
+
+
+</div>
+
+            
+    
+        <a href="http://www.gowork.top/python-sorted/#comments" class="article-comment-link">评论</a>
+    
+
+        </footer>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/hello-django/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">下一篇</strong>
+            <div class="article-nav-title">django初识</div>
+        </a>
+    
+</nav>
+
+
+    
+</article>
+
+
+    
+    
+        <section id="comments">
+    <div id="uyan_frame"></div>
+</section>
+    
+
 </section>
             
                 

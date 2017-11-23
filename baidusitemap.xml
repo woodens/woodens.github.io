@@ -4,6 +4,26 @@
 
     
   <url>
+    <loc>http://www.gowork.top/hello-vue-cli/</loc>
+    <lastmod>2017-11-23T14:50:38.000Z</lastmod>
+    <data>
+        <display>
+        <title>vue-cli 创建单页面应用</title>
+        <pubTime>2017-11-15T13:23:20.000Z</pubTime>
+        
+        <tag>vue-cli</tag>
+         
+         
+           
+             
+              <breadCrumb title="工具" url="http://www.gowork.top/categories/tools/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://www.gowork.top/hello-hexo/</loc>
     <lastmod>2017-11-23T14:28:18.000Z</lastmod>
     <data>
@@ -63,26 +83,6 @@
            
              
               <breadCrumb title="python" url="http://www.gowork.top/categories/python/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.gowork.top/hello-vue-cli/</loc>
-    <lastmod>2017-11-18T16:25:50.000Z</lastmod>
-    <data>
-        <display>
-        <title>hello-vue-cli</title>
-        <pubTime>2017-11-15T13:23:20.000Z</pubTime>
-        
-        <tag>vue-cli</tag>
-         
-         
-           
-             
-              <breadCrumb title="工具" url="http://www.gowork.top/categories/tools/"/>
           
         </display>
     </data>

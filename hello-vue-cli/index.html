@@ -3,21 +3,21 @@
 <head>
     <meta charset="utf-8">
     
-    <title>hello-vue-cli | gowork的博客</title>
+    <title>vue-cli 创建单页面应用 | gowork的博客</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="vue-cli 创建单页面应用安装使用vue-cli创建项目项目结构单页面应用的项目必要三文件：  一个html文件：index.html 一个webpack打包时的文件：main.js 一个vue根组件，作为其他组件的挂载点：App.vue  使用vue-router 作为路由">
+    <meta name="description" content="最近在做一个系统控制项目，主要是控制之前用c++写的系统（同一套部署多个服务器，操作不同数据），需要一个系统来控制这些服务器操作，所以想用前端使用vue-cli创建单页面项目，后端使用springboot做个中间控制器连接多台服务器。">
 <meta name="keywords" content="vue-cli">
 <meta property="og:type" content="article">
-<meta property="og:title" content="hello-vue-cli">
+<meta property="og:title" content="vue-cli 创建单页面应用">
 <meta property="og:url" content="http://www.gowork.top/hello-vue-cli/index.html">
 <meta property="og:site_name" content="gowork的博客">
-<meta property="og:description" content="vue-cli 创建单页面应用安装使用vue-cli创建项目项目结构单页面应用的项目必要三文件：  一个html文件：index.html 一个webpack打包时的文件：main.js 一个vue根组件，作为其他组件的挂载点：App.vue  使用vue-router 作为路由">
+<meta property="og:description" content="最近在做一个系统控制项目，主要是控制之前用c++写的系统（同一套部署多个服务器，操作不同数据），需要一个系统来控制这些服务器操作，所以想用前端使用vue-cli创建单页面项目，后端使用springboot做个中间控制器连接多台服务器。">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://on90cf3na.bkt.clouddn.com/17-11-19/90474360.jpg">
-<meta property="og:updated_time" content="2017-11-18T16:25:50.000Z">
+<meta property="og:updated_time" content="2017-11-23T14:50:38.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="hello-vue-cli">
-<meta name="twitter:description" content="vue-cli 创建单页面应用安装使用vue-cli创建项目项目结构单页面应用的项目必要三文件：  一个html文件：index.html 一个webpack打包时的文件：main.js 一个vue根组件，作为其他组件的挂载点：App.vue  使用vue-router 作为路由">
+<meta name="twitter:title" content="vue-cli 创建单页面应用">
+<meta name="twitter:description" content="最近在做一个系统控制项目，主要是控制之前用c++写的系统（同一套部署多个服务器，操作不同数据），需要一个系统来控制这些服务器操作，所以想用前端使用vue-cli创建单页面项目，后端使用springboot做个中间控制器连接多台服务器。">
 <meta name="twitter:image" content="http://on90cf3na.bkt.clouddn.com/17-11-19/90474360.jpg">
     
 
@@ -242,7 +242,7 @@ var _hmt = _hmt || [];
                 
     
         <h1 class="article-title" itemprop="name">
-            hello-vue-cli
+            vue-cli 创建单页面应用
         </h1>
     
 
@@ -282,7 +282,13 @@ var _hmt = _hmt || [];
         <div class="article-entry" itemprop="articleBody">
         
             
-            <h1 id="vue-cli-创建单页面应用"><a href="#vue-cli-创建单页面应用" class="headerlink" title="vue-cli 创建单页面应用"></a>vue-cli 创建单页面应用</h1><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><h2 id="使用vue-cli创建项目"><a href="#使用vue-cli创建项目" class="headerlink" title="使用vue-cli创建项目"></a>使用vue-cli创建项目</h2><h3 id="项目结构"><a href="#项目结构" class="headerlink" title="项目结构"></a>项目结构</h3><p>单页面应用的项目必要三文件：</p>
+            <p>最近在做一个系统控制项目，主要是控制之前用c++写的系统（同一套部署多个服务器，操作不同数据），需要一个系统来控制这些服务器操作，所以想用前端使用vue-cli创建单页面项目，后端使用springboot做个中间控制器连接多台服务器。</p>
+<a id="more"></a>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>使用npm进行安装（默认已经安装好nodejs）</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install --global vue-cli</div></pre></td></tr></table></figure>
+<h2 id="使用vue-cli创建项目"><a href="#使用vue-cli创建项目" class="headerlink" title="使用vue-cli创建项目"></a>使用vue-cli创建项目</h2><p>在你的工作目录命令行创建项目</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">vue init webpack &lt;projectname&gt;</div><div class="line"><span class="meta">#</span> 接下来或询问项目创建的信息</div><div class="line">Runtime + Compiler: recommended for most users    运行加编译</div><div class="line">Runtime-only: about 6KB lighter min+gzip, but templates (or any Vue-specificHTML) are ONLY allowed in .vue files - render functions are required elsewhere   仅运行时</div><div class="line">Install vue-router? (Y/n)    是否安装vue-router 官方路由，选择Y，输入Y即可</div><div class="line">Use ESLint to lint your code? (Y/n) 是否代码检查，新手选择n</div><div class="line">  Standard (https://github.com/feross/standard) 标准的</div><div class="line">  AirBNB (https://github.com/airbnb/javascript) 最合理的，如果需要代码检查就选择此项</div><div class="line">  none (configure it yourself)                  自定义</div><div class="line">  Setup unit tests with Karma + Mocha? (Y/n)  是否安装单元测试</div><div class="line">  Setup e2e tests with Nightwatch(Y/n)?     是否安装e2e测试</div><div class="line"><span class="meta">#</span> 进入项目安装模块</div><div class="line">cd &lt;projectname&gt; &amp; npm install</div><div class="line"><span class="meta">#</span> 运行项目</div><div class="line">npm run dev</div><div class="line"><span class="meta">#</span> 默认在8080端口打开，在浏览器上输入http://localhost:8080进行访问</div></pre></td></tr></table></figure>
+<h3 id="项目结构"><a href="#项目结构" class="headerlink" title="项目结构"></a>项目结构</h3><p>单页面应用的项目必要三文件：</p>
 <ul>
 <li>一个html文件：index.html</li>
 <li>一个webpack打包时的文件：main.js</li>
@@ -444,7 +450,7 @@ var _hmt = _hmt || [];
                             <a href="/hello-vue-cli/" class="thumbnail">
     
     
-        <span style="background-image:url(http://on90cf3na.bkt.clouddn.com/17-11-19/90474360.jpg)" alt="hello-vue-cli" class="thumbnail-image"></span>
+        <span style="background-image:url(http://on90cf3na.bkt.clouddn.com/17-11-19/90474360.jpg)" alt="vue-cli 创建单页面应用" class="thumbnail-image"></span>
     
 </a>
 
@@ -452,7 +458,7 @@ var _hmt = _hmt || [];
                         
                         <div class="item-inner">
                             <p class="item-category"><a class="article-category-link" href="/categories/tools/">工具</a></p>
-                            <p class="item-title"><a href="/hello-vue-cli/" class="title">hello-vue-cli</a></p>
+                            <p class="item-title"><a href="/hello-vue-cli/" class="title">vue-cli 创建单页面应用</a></p>
                             <p class="item-date"><time datetime="2017-11-15T13:23:20.000Z" itemprop="datePublished">2017-11-15</time></p>
                         </div>
                     </li>

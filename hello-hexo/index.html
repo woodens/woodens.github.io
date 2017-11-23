@@ -14,7 +14,7 @@
 <meta property="og:description" content="在各种博客上面写过文章，像CSDN、开源中国等，编辑器使用很不习惯，页面展示的样式也不是很好看，遂有了自己搭建个人博客的想法，google之后，发现hexo是一个不错的选择！">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://on90cf3na.bkt.clouddn.com/17-11-2/77860457.jpg">
-<meta property="og:updated_time" content="2017-11-02T08:50:34.000Z">
+<meta property="og:updated_time" content="2017-11-23T14:28:18.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使用hexo框架创建个人博客">
 <meta name="twitter:description" content="在各种博客上面写过文章，像CSDN、开源中国等，编辑器使用很不习惯，页面展示的样式也不是很好看，遂有了自己搭建个人博客的想法，google之后，发现hexo是一个不错的选择！">
@@ -309,6 +309,15 @@ var _hmt = _hmt || [];
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">hexo init &lt;folder&gt;</div><div class="line">cd &lt;folder&gt;</div><div class="line">npm install</div></pre></td></tr></table></figure>
 <p>执行完以上程序后，生成的目录如下：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">├── _config.yml       # 网站的配置信息大部分都在这里</div><div class="line">├── package.json      # 应用程序的信息</div><div class="line">├── scaffolds         # 模板文件夹  应用程序会根据模板创建文件</div><div class="line">├── source            # 用户资源文件，除_posts文件夹下的文件外其他文件夹的内容直接复制过去</div><div class="line">|   ├── _drafts</div><div class="line">|   └── _posts        # 资源文件，文章就在此文件夹下</div><div class="line">└── themes            # 主题文件夹，此文件夹下的每个目录是一个主题，会根据配置文件生成静态文件</div></pre></td></tr></table></figure>
+<h2 id="草稿"><a href="#草稿" class="headerlink" title="草稿"></a>草稿</h2><blockquote>
+<p>对于还还没有编写完的文章不想显示在博客中，可以使用草稿来处理。</p>
+</blockquote>
+<p>创建草稿</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span> 以下命令会在source/_drafts目录下生成一个new-draft.md文件，但是该文件不会显示在博客页面中</div><div class="line">hexo new draft 'new draft'</div></pre></td></tr></table></figure>
+<p>本地预览</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo server --drafts</div></pre></td></tr></table></figure>
+<p>等完成后可以，可以将草稿变成文章</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo public [layout] &lt;filename&gt;</div></pre></td></tr></table></figure>
 
         
         </div>

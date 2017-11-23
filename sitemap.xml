@@ -2,9 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.gowork.top/hello-hexo/</loc>
+    
+    <lastmod>2017-11-23T14:28:18.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://www.gowork.top/python-sorted/</loc>
     
-    <lastmod>2017-11-21T10:06:10.000Z</lastmod>
+    <lastmod>2017-11-21T14:54:42.000Z</lastmod>
     
   </url>
   
@@ -40,13 +47,6 @@
     <loc>http://www.gowork.top/hello-git-repository/</loc>
     
     <lastmod>2017-11-02T09:01:27.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.gowork.top/hello-hexo/</loc>
-    
-    <lastmod>2017-11-02T08:50:34.000Z</lastmod>
     
   </url>
   

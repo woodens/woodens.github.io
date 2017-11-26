@@ -3,18 +3,22 @@
 <head>
     <meta charset="utf-8">
     
-    <title>标签: hexo | gowork的博客</title>
+    <title>elemnt-ui table组件的标题可选方案 | gowork的博客</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="gowork在技术学习及使用过程中的一些积累">
-<meta property="og:type" content="website">
-<meta property="og:title" content="gowork的博客">
-<meta property="og:url" content="http://www.gowork.top/tags/hexo/index.html">
+    <meta name="description" content="前几天在使用element-ui组件的时候有一个需求比较特别，就是table组件使用时列数太多，显示的时候需要左右拉动才能显示全，那就只有一个方法可以解决此问题，那就是将table的列可选；but官网木有此项，如何办？活人还能被尿憋死吗，在官方基础上自己造。">
+<meta name="keywords" content="element-ui,table">
+<meta property="og:type" content="article">
+<meta property="og:title" content="elemnt-ui table组件的标题可选方案">
+<meta property="og:url" content="http://www.gowork.top/hello-element-ui-table-changeable/index.html">
 <meta property="og:site_name" content="gowork的博客">
-<meta property="og:description" content="gowork在技术学习及使用过程中的一些积累">
+<meta property="og:description" content="前几天在使用element-ui组件的时候有一个需求比较特别，就是table组件使用时列数太多，显示的时候需要左右拉动才能显示全，那就只有一个方法可以解决此问题，那就是将table的列可选；but官网木有此项，如何办？活人还能被尿憋死吗，在官方基础上自己造。">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://on90cf3na.bkt.clouddn.com/17-11-26/19257166.jpg">
+<meta property="og:updated_time" content="2017-11-26T03:34:33.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="gowork的博客">
-<meta name="twitter:description" content="gowork在技术学习及使用过程中的一些积累">
+<meta name="twitter:title" content="elemnt-ui table组件的标题可选方案">
+<meta name="twitter:description" content="前几天在使用element-ui组件的时候有一个需求比较特别，就是table组件使用时列数太多，显示的时候需要左右拉动才能显示全，那就只有一个方法可以解决此问题，那就是将table的列可选；but官网木有此项，如何办？活人还能被尿憋死吗，在官方基础上自己造。">
+<meta name="twitter:image" content="http://on90cf3na.bkt.clouddn.com/17-11-26/19257166.jpg">
     
 
     
@@ -231,50 +235,152 @@ var _hmt = _hmt || [];
 </aside>
 
             
-            <section id="main">
-<div class="timeline timeline-wrap">
-    <div class="timeline-row timeline-row-major">
-        <span class="node"><i class="fa fa-tag"></i></span>
-        <h1 class="title">#hexo</h1>
-    </div>
-    
-        <div class="timeline-row">
-            <span class="node"></span>
-            <div class="content">
+            <section id="main"><article id="post-hello-element-ui-table-changeable" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
                 
     
-        <h1 itemprop="name">
-            <a class="timeline-article-title" href="/hello-hexo/">使用hexo框架创建个人博客</a>
+        <h1 class="article-title" itemprop="name">
+            elemnt-ui table组件的标题可选方案
         </h1>
     
 
-                <div class="article-meta">
-                    
+                
+                    <div class="article-meta">
+                        
     <div class="article-date">
         <i class="fa fa-calendar"></i>
-        <a href="/hello-hexo/">
-            <time datetime="2017-10-31T07:45:11.000Z" itemprop="datePublished">2017-10-31</time>
+        <a href="/hello-element-ui-table-changeable/">
+            <time datetime="2017-11-26T02:13:07.000Z" itemprop="datePublished">2017-11-26</time>
         </a>
     </div>
 
 
-                    
+                        
     <div class="article-category">
     	<i class="fa fa-folder"></i>
         <a class="article-category-link" href="/categories/tools/">工具</a>
     </div>
 
-                    
+                        
     <div class="article-tag">
         <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/hexo/">hexo</a>, <a class="tag-link" href="/tags/blog/">博客</a>
+        <a class="tag-link" href="/tags/element-ui/">element-ui</a>, <a class="tag-link" href="/tags/table/">table</a>
     </div>
 
-                </div>
-            </div>
+                        
+                        <span id="busuanzi_container_page_pv">
+                            <i class="fa fa-eye" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;<span id="busuanzi_value_page_pv"></span>
+                        </span>
+                        
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <p>前几天在使用element-ui组件的时候有一个需求比较特别，就是table组件使用时列数太多，显示的时候需要左右拉动才能显示全，那就只有一个方法可以解决此问题，那就是将table的列可选；but官网木有此项，如何办？活人还能被尿憋死吗，在官方基础上自己造。</p>
+<a id="more"></a>
+<p>将官方的例子改造，每列选项属性组成集合循环，而不是一一设置，demo顶千言。直接上例子</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div></pre></td><td class="code"><pre><div class="line">&lt;template&gt;</div><div class="line">&lt;el-row :gutter=&quot;3&quot;&gt;</div><div class="line">    &lt;el-col :span=&quot;4&quot; v-for=&quot;col in cols&quot; :key=&quot;col.prop&quot;&gt;</div><div class="line">        &lt;el-switch v-model=&quot;col.is_show&quot;&gt;&lt;/el-switch&gt;&#123;&#123;col.label&#125;&#125;</div><div class="line">    &lt;/el-col&gt;</div><div class="line">&lt;/el-row&gt;</div><div class="line">&lt;el-table v-loading.body=&quot;loading&quot; :data=&quot;tableData&quot; stripe style=&quot;width: 100%;margin-top: 10px&quot; @selection-change=&quot;handleSelectionChange&quot;&gt;</div><div class="line">    &lt;el-table-column type=&quot;selection&quot;&gt;&lt;/el-table-column&gt;</div><div class="line">    &lt;el-table-column type=&quot;index&quot;&gt;&lt;/el-table-column&gt;</div><div class="line">        &lt;template v-for=&quot;col in cols&quot; v-if=&quot;col.is_show&quot;&gt;</div><div class="line">            &lt;el-table-column v-if=&quot;col.type===&apos;normal&apos;&quot; sortable :prop=&quot;col.prop&quot; :label=&quot;col.label&quot; :key=&quot;col.prop&quot;&gt;&lt;/el-table-column&gt;</div><div class="line">            &lt;el-table-column v-if=&quot;col.type===&apos;sort&apos; &amp; col.prop!==&apos;operate&apos;&quot; :label=&quot;col.label&quot; :key=&quot;col.prop&quot; fixed=&quot;right&quot;&gt;</div><div class="line">                &lt;template slot-scope=&quot;scope&quot;&gt;</div><div class="line">                    &lt;el-tag type=&quot;primary&quot; v-if=&quot;col.prop===&apos;verif_img&apos;&quot;&gt;&lt;img :src=&quot;scope.row.verif_img&quot; style=&quot;width:60px;height:20px&quot;/&gt;&lt;/el-tag&gt;</div><div class="line">                &lt;/template&gt;</div><div class="line">            &lt;/el-table-column&gt;</div><div class="line">            &lt;el-table-column v-if=&quot;col.prop===&apos;operate&apos;&quot; :label=&quot;col.label&quot; :key=&quot;col.prop&quot;&gt;</div><div class="line">                &lt;template slot-scope=&quot;scope&quot;&gt;</div><div class="line">                    &lt;el-button size=&quot;small&quot; @click=&quot;handleEdit(scope.row.id)&quot;&gt;编辑&lt;/el-button&gt;</div><div class="line">                &lt;/template&gt;</div><div class="line">            &lt;/el-table-column&gt;</div><div class="line">        &lt;/template&gt;</div><div class="line">&lt;/el-table&gt;      </div><div class="line">&lt;/template&gt;</div><div class="line">&lt;script&gt;</div><div class="line">export default &#123;</div><div class="line">    data() &#123;</div><div class="line">        return &#123;</div><div class="line">            loading: false,</div><div class="line">            cols:[</div><div class="line">                &#123;type:&apos;normal&apos;, is_show:true , prop: &apos;date&apos;, label: &apos;日期&apos;&#125;,</div><div class="line">                &#123;type:&apos;normal&apos;, is_show:true , prop: &apos;name&apos;, label:&apos;姓名&apos;&#125;,</div><div class="line">                &#123;type:&apos;normal&apos;, is_show:true , prop: &apos;age&apos;,  label:&apos;年龄&apos;&#125;,</div><div class="line">                &#123;type:&apos;normal&apos;, is_show:false, prop: &apos;address&apos;, label:&apos;地址&apos;&#125;,</div><div class="line">                &#123;type:&apos;sort&apos;  , is_show:false, prop: &apos;verif_img&apos;, label:&apos;验证图&apos;&#125;,</div><div class="line">                &#123;type:&apos;normal&apos;, is_show:false, prop: &apos;verif_result&apos;, label:&apos;登录验证&apos;&#125;,</div><div class="line">                &#123;type:&apos;sort&apos;  , is_show:true , prop: &apos;operate&apos;, label: &apos;操作&apos;&#125;</div><div class="line">            ],</div><div class="line">            tableData: [&#123;id: 1,date:&apos;2017-11-22&apos;, name:&apos;张三&apos;, age:12, address:&apos;上海市杨浦区五角场&apos;, verif_img:&apos;http://on90cf3na.bkt.clouddn.com/17-11-26/397343.jpg&apos;, verif_result:&apos;2907&apos;&#125;,</div><div class="line">            &#123;id: 2,date:&apos;2017-11-23&apos;, name:&apos;李四&apos;, age:13, address:&apos;上海市杨浦区江湾体育场&apos;, verif_img:&apos;http://on90cf3na.bkt.clouddn.com/17-11-26/397343.jpg&apos;, verif_result:&apos;2971&apos;&#125;]</div><div class="line">        &#125;</div><div class="line">    &#125;,</div><div class="line">    methods:&#123;</div><div class="line">        handleSelectionChange(val)&#123;</div><div class="line"></div><div class="line">        &#125;,</div><div class="line">        handleEdit(id)&#123;</div><div class="line"></div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>上面例子基本涵盖table常用场景，可以尽情使用</p>
+</blockquote>
+
+        
         </div>
-    
+        <footer class="article-footer">
+            <div class="share-container">
+
+    <div class="jiathis_style">
+    <span class="jiathis_txt">分享到：</span>
+    <a class="jiathis_button_qzone">QQ空间</a>
+    <a class="jiathis_button_tsina">新浪微博</a>
+    <a class="jiathis_button_tqq">腾讯微博</a>
+    <a class="jiathis_button_weixin">微信</a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+    <a class="jiathis_counter_style"></a>
 </div>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<style>
+    .jiathis_style div:first-child:not(.jiadiv_01) {
+        width: auto !important;
+        border: none !important;
+    }
+    .jiathis_style .jiadiv_01 {
+        margin: 10px 0;
+        border-radius: 4px;
+        border: #e1e1e1 solid 1px;
+    }
+    .jiathis_style .jiadiv_01 div:first-child {
+        display: none;
+    }
+    .jiathis_style .jiadiv_02 {
+        padding: 7px 0 !important;
+    }
+    .jiathis_style .jiadiv_02 .jiatitle {
+        width: 85px;
+        border: none;
+        height: auto;
+        margin: 3px 10px;
+        padding: 6px 10px;
+        border-radius: 4px;
+    }
+    .jiathis_style .jiadiv_02 .jiatitle:hover {
+        border: none;
+    }
+    .jiathis_style .jiadiv_02 .jiatitle:nth-child(even) {
+        margin-left: 0;
+    }
+    .jiathis_style .jtico:hover {
+        opacity: 1;
+    }
+    .jiathis_style .ckepopBottom,
+    .jiathis_style .centerBottom {
+        width: auto !important;
+        padding: 5px;
+        background: #f7f7f7;
+    }
+</style>
+
+
+
+</div>
+
+            
+    
+        <a href="http://www.gowork.top/hello-element-ui-table-changeable/#comments" class="article-comment-link">评论</a>
+    
+
+        </footer>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/python-sorted/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">下一篇</strong>
+            <div class="article-nav-title">python排序</div>
+        </a>
+    
+</nav>
+
+
+    
+</article>
+
+
+    
+    
+        <section id="comments">
+    <div id="uyan_frame"></div>
+</section>
+    
+
 </section>
             
                 
